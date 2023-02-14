@@ -1,0 +1,4 @@
+name = "ChevLie"
+uuid = "02962454-1d98-4bbc-b4d2-c6bfa4ecea97"
+authors = ["Meinolf Geck\n <meinolf.geck@mathematik.uni-stuttgart.de>"]
+version = "0.1.0"
