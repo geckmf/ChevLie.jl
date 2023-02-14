@@ -5,7 +5,7 @@ version = "0.1.0"
 [compat]
 julia = "1"
 BenchmarkTools = "1"
-#SparseArrays = "1"
+SparseArrays = "1"
 Nemo = "0.32,0.33,0.34"
 Singular = "0.16,0.17,0.18"
 
@@ -17,6 +17,6 @@ test = ["Test"]
 
 [deps]
 BenchmarkTools = "6e4b80f9-dd63-53aa-95a3-0cdb28fa8baf"
-#SparseArrays = "4249f315-58d4-4c46-b324-3577fc7dfca0"
+SparseArrays = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
 Nemo = "2edaba10-b0f1-5616-af89-8c11ac63239a"
 Singular = "bcd08a7b-43d2-5ff7-b6d4-c458787f915c"
