@@ -2024,25 +2024,25 @@ function liemrsi(lie::LieAlg,r::Int,s::Int,i::Int)
   return 0,0
 end
 
-function checkcommrel(lie::LieAlg,r::Int,s::Int,cr)
-  for tt in [[2,19],[1009,211],[23,10007],[17,-769],[-179,131]] 
-    t=tt[1];
-    u=tt[2];
-    xr=sparse(chevrootelt(lie,r,t))
-    xs=sparse(chevrootelt(lie,s,u))
-    xr1=sparse(chevrootelt(lie,r,-t))
-    xs1=sparse(chevrootelt(lie,s,-u))
-    a1=xs1*xr1*xs*xr
-    a2=sparse(chevrootelt(lie,r,0))
-    for l in cr 
-      a2*=sparse(chevrootelt(lie,l[4],l[3]*t^l[1]*u^l[2]))
-    end
-    if a1!=a2
-      return false 
-    end
-  end
-  return true
-end
+#function checkcommrel(lie::LieAlg,r::Int,s::Int,cr)
+#  for tt in [[2,19],[1009,211],[23,10007],[17,-769],[-179,131]] 
+#    t=tt[1];
+#    u=tt[2];
+#    xr=sparse(chevrootelt(lie,r,t))
+#    xs=sparse(chevrootelt(lie,s,u))
+#    xr1=sparse(chevrootelt(lie,r,-t))
+#    xs1=sparse(chevrootelt(lie,s,-u))
+#    a1=xs1*xr1*xs*xr
+#    a2=sparse(chevrootelt(lie,r,0))
+#    for l in cr 
+#      a2*=sparse(chevrootelt(lie,l[4],l[3]*t^l[1]*u^l[2]))
+#    end
+#    if a1!=a2
+#      return false 
+#    end
+#  end
+#  return true
+#end
 
 function checkcommrel(lie::LieAlg,r::Int,s::Int,cr)
   R,tt=Nemo.PolynomialRing(Nemo.ZZ,["T","U"])
@@ -4572,92 +4572,21 @@ function chevrooteltprod(lie::LieAlg,n0,pr)
   return jordanblocks(m)
 end
   
-    l=LieAlg(:f,4)
-    n0=[[2, 1], [4, 1], [9, 1]]  # C3(a1) Lawther
-    n1=[[1, 1], [3, 1], [20, 1]]  # C3(a1) Shoji
-    #@time println(chevrooteltprod(l,n0,2))
-    #@time println(chevrooteltprod(l,n0,3))
-    n0=[[l.roots[i[1]],1] for i in n0]
-    n1=[[l.roots[i[1]],1] for i in n1]
-    @time println(borelcosets(l,2,n1))
-    #@time println(borelcosets(l,2,n0))
-    @time println(borelcosets(l,3,n0))
-
-    l=LieAlg(:e,6)
-    tw=[6,2,5,4,3,1]
-    n0=[[i,1] for i in ChevLie.E6critical["e6a3"]]
-    @time println(twistedborelcosets(l,3,n0,tw))
-
-    l=LieAlg(:e,7); #include("e7grp3.jl")
-    n0=[[8, 1], [15, 1], [17, 1], [20, 1], [23, 1], [25, 1]]
-    rl=[ 8, 15, 17, 23, 25]
-#@time println(chevrooteltprod(l,n0,2))
-##time println(chevrooteltprod(l,n0,3))
-    n0=[[l.roots[i[1]],1] for i in n0]
-#@time println(borelcosets(l,2,n0,63))
-#@time println(borelcosets(l,3,n0,63))
-   l=LieAlg(:e,8); #include("e8grp2.jl")
-   n77=[[23,1],[24,1],[25,1],[27,1],[26,1],[28,1],[15,1],[22,1]]
-   n78=[[23,1],[24,1],[25,1],[27,1],[26,1],[28,1],[15,1],[22,1],[29,1]]
-   n79=[[23, 1],[24,1],[25,1],[27,1],[26,1],[28,1],[8,1],[22,1],[29,1]]
-
-#@time println(chevrooteltprod(l,n77,2))
-#@time println(chevrooteltprod(l,n78,2))
-#@time println(chevrooteltprod(l,n79,2))
-    n77=[[l.roots[i[1]],1] for i in n77]
-    n78=[[l.roots[i[1]],1] for i in n78]
-    n79=[[l.roots[i[1]],1] for i in n79]
-#@time println(borelcosets(l,2,n77,120))
-#@time println(borelcosets(l,2,n78,120))
-#@time println(borelcosets(l,2,n79,120))
-
-   n77=[[23,1],[24,1],[25,1],[27,1],[26,1],[28,1],[15,1],[22,1]]
-   n78=[[23,1],[24,1],[25,1],[27,1],[26,1],[28,1],[15,1],[22,1],[29,1]]
-   n79=[[23, 1],[24,1],[25,1],[27,1],[26,1],[28,1],[8,1],[22,1],[29,1]]
-#@time println(chevrooteltprod(l,n77,3))
-#@time println(chevrooteltprod(l,n78,3))
-#@time println(chevrooteltprod(l,n79,3))
-    n77=[[l.roots[i[1]],1] for i in n77]
-    n78=[[l.roots[i[1]],1] for i in n78]
-    n79=[[l.roots[i[1]],1] for i in n79]
-#@time println(borelcosets(l,3,n77,120))
-#@time println(borelcosets(l,3,n78,120))
-#@time println(borelcosets(l,3,n79,120))
-
-   n77=[[23,1],[24,1],[25,1],[27,1],[26,1],[28,1],[15,1],[22,1]]
-   n78=[[23,1],[24,1],[25,1],[27,1],[26,1],[28,1],[15,1],[22,1],[29,1]]
-   n79=[[23, 1],[24,1],[25,1],[27,1],[26,1],[28,1],[8,1],[22,1],[29,1]]
-#@time println(chevrooteltprod(l,n77,2))
-#@time println(chevrooteltprod(l,n77,3))
-#@time println(chevrooteltprod(l,n77,5))
-#@time println(chevrooteltprod(l,n77,7))
-#@time println(chevrooteltprod(l,n77,11))
-#@time println(chevrooteltprod(l,n77,13))
-#@time println(chevrooteltprod(l,n77,17))
-#@time println(chevrooteltprod(l,n78,5))
-#@time println(chevrooteltprod(l,n79,5))
-    n77=[[l.roots[i[1]],1] for i in n77]
-    n78=[[l.roots[i[1]],1] for i in n78]
-    n79=[[l.roots[i[1]],1] for i in n79]
-#@time println(borelcosets(l,5,n77,120))
-#@time println(borelcosets(l,5,n78,120))
-#@time println(borelcosets1(l,5,[i[1] for i in n77]))
-#@time println(borelcosets(l,13,n77,120))
-println("finished")
-flush(stdout)
-#exit()
-
+function banner()
 println("###################################################################")
 println("##                                                               ##")
 println("##    Welcome to  version 1.2  of the Julia module  `ChevLie`:   ##")
 println("##       CONSTRUCTING  LIE  ALGEBRAS  AND  CHEVALLEY  GROUPS     ##")
-println("##    Meinolf Geck,  University of Stuttgart,  ?? January 20??   ##")
+println("##    Meinolf Geck,  University of Stuttgart, 14 February 2023   ##")
 println("##    https://pnp.mathematik.uni-stuttgart.de/iaz/iaz2/geckmf/   ##")
 println("##                                                               ##")
 println("##    Type   lietest()   to run some tests.                      ##")
 println("##    Type   ?LieAlg     for first help; all comments welcome!   ##")
 println("##                                                               ##")
 println("###################################################################")
+end
+
+banner()
 
 end # module ChevLie
 
