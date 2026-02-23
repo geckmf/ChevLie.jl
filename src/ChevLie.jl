@@ -53,7 +53,7 @@ module ChevLie
 
 using SparseArrays
 
-Pkg.add("Nemo");import Nemo
+import Pkg;Pkg.add("Nemo");import Nemo
      
 import Base.show 
 
