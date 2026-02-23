@@ -53,7 +53,7 @@ module ChevLie
 
 using SparseArrays
      
-import Base.show
+import Base.show 
 
 export cartanmateps,rootsystem,permcarteps,LieAlg,allelms,allwords,permword,
         wordperm,weightorbit,lietest,checkrels,rep_minuscule,rep_adj,
