@@ -51,7 +51,11 @@ Welcome to version 1.3 of the Julia module `ChevLie`:
 """
 module ChevLie
 
-using SparseArrays#, Nemo, Singular
+using SparseArrays
+
+import Pkg
+Pkg.add("Nemo"); using Nemo
+Pkg.add("Singular"); using Singular
 
 import Base.show
 
