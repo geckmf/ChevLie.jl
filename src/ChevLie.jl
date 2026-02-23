@@ -53,6 +53,8 @@ module ChevLie
 
 using SparseArrays
 
+Pkg.add("Nemo); using Nemo
+     
 import Base.show
 
 export cartanmateps,rootsystem,permcarteps,LieAlg,allelms,allwords,permword,
