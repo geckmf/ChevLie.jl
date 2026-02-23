@@ -5,6 +5,8 @@ version = "1.2.0"
 [compat]
 julia = "1"
 SparseArrays = "1"
+Nemo = "0.32,0.33,0.34"
+Singular = "0.14,0.15,0.16,0.17,0.18"
 
 [extras]
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
@@ -14,3 +16,5 @@ test = ["Test"]
 
 [deps]
 SparseArrays = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
+Nemo = "0.32,0.33,0.34"
+Singular = "0.14,0.15,0.16,0.17,0.18"
