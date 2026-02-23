@@ -51,7 +51,7 @@ Welcome to version 1.3 of the Julia module `ChevLie`:
 """
 module ChevLie
 
-using BenchmarkTools, SparseArrays#, Nemo, Singular
+using SparseArrays#, Nemo, Singular
 
 import Base.show
 
