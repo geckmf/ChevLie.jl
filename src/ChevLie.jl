@@ -53,10 +53,6 @@ module ChevLie
 
 using SparseArrays
 
-Pkg.add("Nemo"); using Nemo
-
-Pkg.add("Singular"); using Singular
-
 import Base.show
 
 export cartanmateps,rootsystem,permcarteps,LieAlg,allelms,allwords,permword,
