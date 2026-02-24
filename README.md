@@ -10,8 +10,13 @@ me  or make  an issue or a pull request in the GitHub repository.
 
 ### Installing
 
+For full functionality. the Julia package Singular is a;so required:
+```
+julia> using Pkg;Pkg.add("Singular")
+```
+
 [For Julia novices]
-To install this package, at the Julia command line:
+To install the ChevLie package, at the Julia command line:
 
   *  enter package mode with ]
   *  do the command
