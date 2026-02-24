@@ -51,7 +51,7 @@ Welcome to version 1.3 of the Julia module `ChevLie`:
 """
 module ChevLie
 
-using SparseArrays
+using SparseArrays, Singular
 
 import Base.show 
 
