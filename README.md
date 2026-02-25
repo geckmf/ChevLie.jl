@@ -12,7 +12,7 @@ me  or make  an issue or a pull request in the GitHub repository.
 
 For full functionality. the Julia package Singular is also required:
 ```
-julia> using Pkg; Pkg.add("Singular")
+julia> import Pkg; Pkg.add("Singular")
 ```
 
 [For Julia novices]
