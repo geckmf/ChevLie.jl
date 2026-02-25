@@ -3,8 +3,9 @@ uuid = "02962454-1d98-4bbc-b4d2-c6bfa4ecea97"
 authors = ["Meinolf Geck\n <meinolf.geck@mathematik.uni-stuttgart.de>"]
 version = "1.2.0"
 [compat]
-julia = "1"
+julia = "1,2"
 SparseArrays = "1"
+Singular = "0.27,0.28"
 
 [extras]
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
@@ -14,3 +15,4 @@ test = ["Test"]
 
 [deps]
 SparseArrays = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
+Singular = "bcd08a7b-43d2-5ff7-b6d4-c458787f915c"
