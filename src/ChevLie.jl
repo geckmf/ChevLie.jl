@@ -135,20 +135,6 @@ function variables_list(l)
   end
 end
 
-"""`singularpol( <R>, <coeff>, <expon> )`
-
-builds a Singular polynomial over the integers from a list of 
-coefficients <coeff> and a corresponding list of exponent 
-vectors <expon>.
-"""
-function singularpol(R,coeff,expon)
-  f=Singular.MPolyBuildCtx(R)
-  for i in 1:length(expon)
-    Singular.push_term!(f,Singular.ZZ(coeff[i]),expon[i])
-  end
-  Singular.finish(f)
-end
-
 function combinations1(mset::Array{Int,1},m::Int,n::Int,k::Int,
                                         comb::Array{Int,1},i::Int)
   if k==0 
