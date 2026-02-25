@@ -4030,7 +4030,7 @@ julia> @time borelcosets(l,2,[[l.roots[i],1] for i in z77])
 57: 4603965 -
 58: 4603965 -
 4603965
-107.129535 seconds (354.10 M allocations: 16.967 GiB, 9.39% gc time)
+470.389533 seconds (8.88 G allocations: 167.270 GiB, 12.08% gc time)
 ```
 In order to deal with groups of twisted type `E_6`, we also provide
 a function which takes a symmetry of oder `2` of the Cartan matrix 
