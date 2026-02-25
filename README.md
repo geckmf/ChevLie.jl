@@ -8,6 +8,8 @@ https://doi.org/10.2140/jsag.2020.10.41.
 If  you see anything to be improved  in this  package, please contact 
 me  or make  an issue or a pull request in the GitHub repository.
 
+The current version is chevlie1r3, as of 22 Feb 2026.
+
 ### Installing
 
 For full functionality. the Julia package Singular is also required:
