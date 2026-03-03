@@ -1101,7 +1101,7 @@ struct LieAlg
     else
       pl=x[1]
       cmp=permcarteps(cme,pl)
-      cmat,eps,symf=cmp[1],x[2]*cmp[2],x[2]*cmp[3]
+      cmat,eps,symf=cmp[1],x[2]*cmp[2],cmp[3]
       pl1=sortperm(pl)
       mc=[pl1[m] for m in mc]
       println("#I new labels: ")
