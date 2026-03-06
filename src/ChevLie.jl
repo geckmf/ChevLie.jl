@@ -4488,7 +4488,9 @@ println("##                                                                ##")
 println("####################################################################")
 end
 
-banner()
+function __init__()
+  banner()
+end
 
 end # module ChevLie
 
