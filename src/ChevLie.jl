@@ -1519,7 +1519,7 @@ end
 function transporting_elt(blen::Int,perms::Array{Array{Int,1},1},
                                 set1::Array{Int,1},set2::Array{Int,1})
   k=length(set1)
-  orb1k=orbitplus(blen,perms,set1[k])
+  orb1k=orbitplus(blen,perms,set1[1])
   if length(set1)==1
     if set2[1] in orb1k[1]
       return orb1k[3][findfirst(==(set2[1]),orb1k[2])]
@@ -1530,7 +1530,7 @@ function transporting_elt(blen::Int,perms::Array{Array{Int,1},1},
     for i0 in set2
       if i0 in orb1k[1]
         w=orb1k[3][findfirst(==(i0),orb1k[2])]
-        set1a=[w[set1[i]] for i in 1:(k-1)]
+        set1a=[w[set1[i]] for i in 2:k]
         set2a=[i for i in set2 if i!=i0]
         perms1=[p for p in perms if p[i0]==i0]
         res=transporting_elt(blen,perms1,set1a,set2a)
