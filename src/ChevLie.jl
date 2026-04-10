@@ -1708,7 +1708,7 @@ julia> [dynkin_type(cartanmat_subsystem(l,i)) for i in s[4]]
  "B_2,A_1,A_1"
  "A_1,A_1,A_1,A_1"
 ```
-See also `closedsystems`, `dynkin_type`.
+See also `closedsubsystems`, `dynkin_type`.
 """
 function cartanmat_subsystem(lie::LieAlg,set1::Array{Int,1})
   cmat=zeros(Int8,length(set1),length(set1))
