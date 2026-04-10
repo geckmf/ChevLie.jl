@@ -710,11 +710,11 @@ components of <cmat>. This is useful, for example, for determining
 the type of a closed subsystem of the root system determined by <cmat>.
 
 ```julia-repl
-julia> l=LieAlg(:f,4);
+julia> l=LieAlg(:f,4,[2,3,4,1],-1)
 julia> dynkin_type(l.cartan)
 "F_4"
 
-julia> dynkin_type(Int8[2 0 0 0;0 2 -1 0;0 -1 2 -2;0 0 -1 2])
+julia> dynkin_type(Int8[2 0 0 -1; 0 2 0 -1; 0 0 2 0; -2 -1 0 2])
 "C_3,A_1"
 ```
 See also `closedsubsystems`, `cartanmat_subsystem`.
