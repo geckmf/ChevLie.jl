@@ -1519,8 +1519,6 @@ end
 
 returns all closed subsystems of the root system of the Lie algebra <lie>.
 The output specifies a canonical set of simple roots for each such subset.
-Inclusions between closed subsystems correspond exactly to inclusions
-between the sets of simple roots in the output of the function.
                  
 ```julia-repl     
 julia> closedsubsystems(LieAlg(:b,3))
@@ -2538,7 +2536,7 @@ end
 
 returns the lifts of the simple reflections of the Weyl group of the 
 Lie algebra <l> (created by `LieAlg`) to elements in the representation 
-of <li> that is specified by <repr>. For example, for the adjoint
+of <l> that is specified by <repr>. For example, for the adjoint
 representation, we can take <repr> to be the tuple formed by the fields 
 `e_i,f_i,h_i` in <l> itself. Then the monomial elements `n_i` are
 given by `n_i=exp(e_i)exp(-f_i)exp(e_i)`. (These satisfy the braid 
